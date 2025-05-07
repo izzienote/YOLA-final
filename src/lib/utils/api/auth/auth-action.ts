@@ -73,7 +73,7 @@ export const signInWithSocial = async (provider: 'google' | 'kakao') => {
     provider,
     options: {
       scopes: scopes,
-      redirectTo: `${process.env.NEXT_SERVER_BASE_URL}${API.SOCIAL_LOGIN_CALL_BACK}`
+      redirectTo: `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}${API.SOCIAL_LOGIN_CALL_BACK}`
     }
   });
 
