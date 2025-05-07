@@ -1,5 +1,3 @@
-export const NEXT_SERVER_BASE_URL = 'http://localhost:3000';
-
 export const API = {
   SOCIAL_LOGIN_CALL_BACK: '/api/auth/callback',
   GOOGLE_LOGIN: '/api/auth/google',
