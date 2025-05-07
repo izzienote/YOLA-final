@@ -1,7 +1,7 @@
 import { API } from '@/constants/api-path';
 import { FAIL } from '@/constants/messages';
 
-const BASE_URL: string = `${process.env.NEXT_SERVER_BASE_URL}${API.VIEW_COUNT}`;
+const BASE_URL: string = `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}${API.VIEW_COUNT}`;
 
 /**
  * view-count 라우트 핸들러에 post 요청을 보내는 api 함수입니다.
