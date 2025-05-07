@@ -1,4 +1,3 @@
-// export const NEXT_SERVER_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'; // 버셀에선 배포 주소, 로컬에선 로컬 주소
 export const NEXT_SERVER_BASE_URL = 'http://localhost:3000';
 
 export const API = {
