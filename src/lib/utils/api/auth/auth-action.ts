@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { API, NEXT_SERVER_BASE_URL } from '@/constants/api-path';
+import { API } from '@/constants/api-path';
 import { FAIL } from '@/constants/messages';
 import { PATH } from '@/constants/page-path';
 import { TABLE } from '@/constants/supabase-tables-name';
@@ -66,8 +66,6 @@ export const signup = async (formData: SignupFormData) => {
 
 export const signInWithSocial = async (provider: 'google' | 'kakao') => {
   const supabase = await createClient();
-  //URI 확인용 콘솔
-  console.log('Redirect URI:', process.env.NEXT_PUBLIC_SERVER_BASE_URL);
 
   const scopes = provider === 'kakao' ? 'profile_nickname profile_image account_email' : undefined;
 
@@ -75,7 +73,7 @@ export const signInWithSocial = async (provider: 'google' | 'kakao') => {
     provider,
     options: {
       scopes: scopes,
-      redirectTo: `${NEXT_SERVER_BASE_URL}${API.SOCIAL_LOGIN_CALL_BACK}`
+      redirectTo: `${process.env.NEXT_SERVER_BASE_URL}${API.SOCIAL_LOGIN_CALL_BACK}`
     }
   });
 

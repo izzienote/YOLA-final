@@ -1,4 +1,4 @@
-import { API, NEXT_SERVER_BASE_URL } from '@/constants/api-path';
+import { API } from '@/constants/api-path';
 import { FAIL } from '@/constants/messages';
 import type { TableUsers } from '@/types/supabase-const';
 
@@ -12,7 +12,7 @@ export const fetchUserSessionState = async (): Promise<{
   isLogin: boolean;
 }> => {
   try {
-    const res = await fetch(`${NEXT_SERVER_BASE_URL}/api/auth/user-session-state`, {
+    const res = await fetch(`${process.env.NEXT_SERVER_BASE_URL}/api/auth/user-session-state`, {
       method: 'GET',
       credentials: 'include'
     });
@@ -35,7 +35,7 @@ export const fetchUserSessionState = async (): Promise<{
 export const fetchDuplicateCheck = async (field: string, value: string): Promise<boolean> => {
   try {
     const res = await fetch(
-      `${NEXT_SERVER_BASE_URL}${API.DUPLICATE}?field=${field}&value=${encodeURIComponent(value)}`,
+      `${process.env.NEXT_SERVER_BASE_URL}${API.DUPLICATE}?field=${field}&value=${encodeURIComponent(value)}`,
       {
         method: 'GET',
         headers: {
@@ -64,7 +64,7 @@ export const fetchDuplicateCheck = async (field: string, value: string): Promise
  */
 export const fetchUserProfile = async (): Promise<TableUsers> => {
   try {
-    const res = await fetch(`${NEXT_SERVER_BASE_URL}${API.PROFILE}`, {
+    const res = await fetch(`${process.env.NEXT_SERVER_BASE_URL}${API.PROFILE}`, {
       method: 'GET'
     });
 
