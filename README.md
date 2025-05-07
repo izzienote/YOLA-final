@@ -6,6 +6,8 @@
 
 혼자 보내는 일상을 공유하고 즐길 수 있는 서비스, YOLA!
 
+🔗 서비스 바로가기 : https://yolalife.today
+
 </br>
 
 ## 🌐 서비스 기획 의도
@@ -55,8 +57,7 @@
 
 ### System Architecture
 
-  ![System Architecture](https://github.com/user-attachments/assets/6e7d022a-b345-4dd3-8241-93c353f67a01)
-
+![System Architecture](https://github.com/user-attachments/assets/6e7d022a-b345-4dd3-8241-93c353f67a01)
 
 </br>
 
