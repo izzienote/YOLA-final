@@ -6,7 +6,7 @@
 
 혼자 보내는 일상을 공유하고 즐길 수 있는 서비스, YOLA!
 
-🔗 서비스 바로가기 : https://yolalife.today
+🔗 서비스 바로가기 : https://www.yolalife.today/
 
 </br>
 

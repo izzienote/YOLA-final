@@ -66,6 +66,8 @@ export const signup = async (formData: SignupFormData) => {
 
 export const signInWithSocial = async (provider: 'google' | 'kakao') => {
   const supabase = await createClient();
+  //URI 확인용 콘솔
+  console.log('Redirect URI:', process.env.NEXT_PUBLIC_SERVER_BASE_URL);
 
   const scopes = provider === 'kakao' ? 'profile_nickname profile_image account_email' : undefined;
 
