@@ -41,7 +41,7 @@ const LifePageClient = () => {
         />
       </div>
       <hr className="mb-[40px] w-full border-secondary-grey-400"></hr>
-      <div className="mb-[30px] flex w-full flex-row justify-between gap-1 text-left">
+      <div className="mb-[30px] flex w-full flex-row justify-around gap-1 text-left md:justify-between">
         <h2 className="whitespace-nowrap text-xl font-semibold text-secondary-grey-900">
           {formatKoreanDate(selectedDate)}
         </h2>
