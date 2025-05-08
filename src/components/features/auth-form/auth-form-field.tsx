@@ -1,5 +1,6 @@
 'use client';
 
+import { Eye, EyeOff } from 'lucide-react';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { ControllerRenderProps, FieldValues, useFormContext } from 'react-hook-form';
 import DuplicateCheckMessage from '@/components/features/auth-form/duplicate-check-message';
@@ -37,6 +38,8 @@ const AuthFormField = <T extends FieldValues>({
   const fieldValue = watch(fieldName);
 
   const setDuplicateCheck = fieldName === AUTH.EMAIL ? setEmailDuplicateCheck : setNicknameDuplicateCheck; // 필드에 따른 중복검사 체크를 위한 할당
+
+  const [showPassword, setShowPassword] = useState(false); //비밀번호 보기 & 숨기기 상태관리
 
   // -------------------------------------------------
   useEffect(() => {
@@ -86,10 +89,20 @@ const AuthFormField = <T extends FieldValues>({
             <Input
               className="h-11 w-full rounded-lg border-secondary-grey-400"
               placeholder={placeholder}
-              type={inputType}
+              type={fieldName === AUTH.PASSWORD && showPassword ? 'text' : inputType}
               {...field}
             />
           </FormControl>
+          {fieldName === AUTH.PASSWORD && (
+            <button
+              type="button"
+              className="absolute right-3 top-2.5 text-secondary-grey-600 hover:text-primary focus:outline-none"
+              onClick={() => setShowPassword(!showPassword)}
+              aria-label={showPassword ? '비밀번호 숨기기' : '비밀번호 보기'}
+            >
+              {!showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
+          )}
           <FormMessage />
           <DuplicateCheckMessage errorMessage={errorMessage} successMessage={successMessage} />
         </div>

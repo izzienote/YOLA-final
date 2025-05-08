@@ -98,13 +98,15 @@ const MyLifeListClient = ({ nickname }: MyLifeListClientProps) => {
         )}
       </section>
       {/* 무한 스크롤 로딩 및 종료 메세지 */}
-      <div className="col-span-full flex items-center justify-center py-4 text-sm text-slate-400">
-        {hasNextPage ? (
-          <div ref={ref}>{isFetchingNextPage && '불러오는 중...'}</div>
-        ) : (
-          '작성하신 라이프글을 전부 불러왔어요.'
-        )}
-      </div>
+      {parsedList.length > 0 && (
+        <div className="col-span-full flex items-center justify-center py-4 text-sm text-slate-400">
+          {hasNextPage ? (
+            <div ref={ref}>{isFetchingNextPage ? '불러오는 중...' : '더 불러오기'}</div>
+          ) : (
+            '작성하신 라이프글을 전부 불러왔어요.'
+          )}
+        </div>
+      )}
     </article>
   );
 };
