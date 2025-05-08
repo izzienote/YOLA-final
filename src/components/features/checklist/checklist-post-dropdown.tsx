@@ -52,8 +52,8 @@ const ChecklistPostDropdown = ({ missions, completedIds = [], selectedId, onSele
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="h-[45px] w-full min-w-[360px] justify-between">
-          {selected ? selected.content : '미션 선택'}
+        <Button variant="outline" className="h-[45px] w-full min-w-[180px] justify-between">
+          <span className="block max-w-[110px] truncate text-left">{selected ? selected.content : '미션 선택'}</span>
           <ChevronDown />
         </Button>
       </DropdownMenuTrigger>
