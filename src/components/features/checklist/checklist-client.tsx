@@ -71,7 +71,7 @@ const ChecklistClient = ({ mission, userId }: ChecklistClientProps) => {
         />
       </article>
       {/* 데스크탑 카드리스트 */}
-      <ul className="hidden w-full max-w-[1200px] items-center gap-[24px] pl-[37px] pr-[39px] md:flex">
+      <ul className="hidden w-full max-w-[1200px] items-center gap-[24px] overflow-x-auto pl-[37px] pr-[39px] md:flex">
         {checklistData.missionList.map((mission) => (
           <li key={mission.id}>
             <MissionCardWrapper mission={mission} onCompletedClick={setSelectedMissionId} {...(userId && { userId })} />

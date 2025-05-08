@@ -39,7 +39,7 @@ const DatePicker = ({ date, setDate }: DatePickerProps) => {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" className="flex h-[45px] w-[208px] items-center justify-center text-left font-normal">
+        <Button variant="outline" className="flex h-[45px] w-[150px] items-center justify-center text-left font-normal">
           <span className="text-lg text-secondary-grey-700">{date}</span>
           <CalendarIcon className="!h-[22px] !w-[22px] shrink-0 text-secondary-grey-700" />
         </Button>

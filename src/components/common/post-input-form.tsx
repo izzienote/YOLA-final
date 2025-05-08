@@ -215,7 +215,10 @@ ex) 오늘은 혼자 코인노래방에 가서 3시간을 부르고 나왔다. �
       </button>
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-[1200px]">
         <div
-          className={clsx('mb-[20px] flex w-full items-center', isMission ? 'justify-start gap-4' : 'justify-between')}
+          className={clsx(
+            'mb-[20px] flex w-full items-center md:flex-row',
+            isMission ? 'justify-start' : 'justify-between'
+          )}
         >
           <h1 className="text-xl font-bold">
             {isEditMode
